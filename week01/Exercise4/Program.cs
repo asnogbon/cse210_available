@@ -25,9 +25,13 @@ class Program
         }
         Console.WriteLine($"The sum is: {sum} ");
         
-        int count = (numbers.Count);
-        int ave = (sum / count);
-        Console.WriteLine($"The average is:{ave} ");
+        int count = numbers.Count;
+        double average = 0;
+        if (count > 0)
+        {
+            average = (double)sum / count;
+        }
+        Console.WriteLine($"The average is: {average}");
 
         int high = 0;
         foreach (int word in numbers)

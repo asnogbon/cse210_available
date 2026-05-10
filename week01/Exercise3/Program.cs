@@ -8,8 +8,7 @@ class Program
         
         Console.WriteLine("What is the magic number? ");
         Random randomGenerator = new Random();
-        int number = randomGenerator.Next(1, 11);
-        Console.WriteLine($"{number}");
+        int number = randomGenerator.Next(1, 100);
 
         
         string response = "yes";
@@ -37,7 +36,7 @@ class Program
                 }
             }
             Console.Write("Do you want to continue? ");
-                response = Console.ReadLine();
+            response = Console.ReadLine().ToLower();
         }
 
     }

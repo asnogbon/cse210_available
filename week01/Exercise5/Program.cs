@@ -9,8 +9,10 @@ class Program
         int userNumber = 0;
 
         DisplayMessage();
-        DisplayPersonalMessage(userName);
-        DisplayPersonalNumber(userNumber);
+        userName = DisplayPersonalMessage(userName);
+        userNumber = DisplayPersonalNumber(userNumber);
+        int square = SquareNumber(userNumber);
+        DisplayResult(userName, square);
 
 
         static void DisplayMessage()
@@ -27,7 +29,7 @@ class Program
 
         static int DisplayPersonalNumber(int userNumber)
         {
-            Console.WriteLine($"Please enter your favorite number: {userNumber}");
+            Console.Write("Please enter your favorite number: ");
             int number = int.Parse(Console.ReadLine());
 
             return number;
