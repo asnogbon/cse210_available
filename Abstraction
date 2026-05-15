@@ -1,0 +1,25 @@
+# Explain Abstraction
+Abstraction is the process of breaking down complex ideas ,concepts into simple ones by focusing on essential, genal features while removing unnecessary characteristics so that only the essential ones remain.
+THe key benefits include reduced complexity.
+An application of abstractions is Programming with classes.
+Example of abstrAactions :
+ public class Person
+    {
+        public string _givenName = "";
+        public string _familyName = "";
+
+        public Person()
+        {
+        }
+
+        public void ShowEasternName()
+        {
+            Console.WriteLine($"{_familyName}, {_givenName}");
+        }
+
+        public void ShowWesternName()
+        {
+            Console.WriteLine($"{_givenName} {_familyName}");
+        }
+    }
+
