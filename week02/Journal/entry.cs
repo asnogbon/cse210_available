@@ -1,17 +1,16 @@
 ﻿using System;
 
-public class entries
+using System;
+
+public class Entry
 {
-	public string date()
-	{
-	}
-    public string promptText()
+    public string _date;
+    public string _promptText;
+    public string _entryText;
+
+    public void Display()
     {
-    }
-    public string entryText()
-    {
-    }
-    public void display()
-    {
+        Console.WriteLine($"Date: {_date} - Prompt: {_promptText}");
+        Console.WriteLine($"{_entryText}\n");
     }
 }
