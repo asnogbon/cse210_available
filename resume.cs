@@ -5,7 +5,7 @@ public class resume
     public string _name;
     {
     }
-    public public List<job> _jobs = new Listjob>(); _jobs()
+    public List<job> _jobs = new Listjob>(); _jobs()
     {
     }
     public void Display()
