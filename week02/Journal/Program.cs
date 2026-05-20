@@ -25,7 +25,7 @@ class Program
             "Describe a challenge you faced and how you overcame it.",
             "What is something new you learned today?",
             "Write about a memorable moment from your day."
-        };
+        }
 
         Random randomGenerator = new Random();
         int choice = -1;
