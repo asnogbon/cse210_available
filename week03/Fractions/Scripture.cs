@@ -9,7 +9,16 @@ public class Scripture
     public List<Word> _word()
     {
     }
-    public Referance _referance()
+    public Scripture(Referance Referance, string text)
+    {
+    }
+    public void HideRadomWords(int numberToHide)
+    {
+    }
+    public string GetDisplayText()
+    {
+    }
+    public bool IsCompleteHidden()
     {
     }
 }
