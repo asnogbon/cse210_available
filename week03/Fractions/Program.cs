@@ -11,6 +11,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        
         List<Scripture> scriptureLibrary = new List<Scripture>
         {
             new Scripture(new Reference("Proverbs", 3, 5, 6), "Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."),
@@ -41,8 +42,10 @@ class Program
             {
                 break;
             }
-
-            selectedScripture.HideRandomWords(3);
+            else
+            {
+                selectedScripture.HideRandomWords(3);
+            }
         }
     }
 

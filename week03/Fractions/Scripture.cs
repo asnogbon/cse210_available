@@ -23,13 +23,11 @@ public class Scripture
     public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
-
         List<int> visibleIndices = new List<int>();
         for (int i = 0; i < _words.Count; i++)
         {
             if (!_words[i].isHidden())
             {
-                
                 visibleIndices.Add(i);
             }
         }
@@ -40,6 +38,8 @@ public class Scripture
         {
             int randomIndex = random.Next(visibleIndices.Count);
             int wordIndexToHide = visibleIndices[randomIndex];
+            _words[wordIndexToHide].Hide();
+            visibleIndices.RemoveAt(randomIndex); // Prevent hiding the same word twice in one call
         }
     }
              public string  GetDisplayText()
