@@ -16,7 +16,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Journal journal = new journal();
+        Journal journal = new Journal();
 
         List<string> prompts = new List<string>
         {

@@ -2,22 +2,19 @@
 
 public class Comment
 {
-    private string Name;
-    private string Text;
+    private string _Name;
+    private string _Text;
     int count = 0;
 
-    public string GetComment(string commented)
+    public string _GetComment(string commented)
     {
         string[] Parts = commented.Split(':');
         count ++;
-        Name = Parts[0];
-        Text = Parts[1];
+        _Name = Parts[0];
+        _Text = Parts[1];
 
-        return $"User {Name} : said \"{Text}\"";
+        return $"User {_Name} : said \"{_Text}\"";
     }
-    public string GetCount(string commented)
-    {
-        return $"This video has {count} comments.";
-    }
+    
 
 }
