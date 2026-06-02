@@ -1,20 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
+
 public class Video
 {
-    private string Title;
-    private string Author;
-    private int Length;
-    public string _GetVideo(string title)
+    private string _title;
+    private string _author;
+    private int _length;
+    private List<Comment> _comments;
+
+    public Video(string title, string author, string time, List<Comment> comments)
     {
-        string[] titleParts = title.Split(',');
-        Title = titleParts[0];
-        Author = titleParts[1];
-        string tt = _getLength(titleParts[2]);
-        Length = int.Parse(tt);
-        return $"{Title},{Author},{Length}";
+        _title = title;
+        _author = author;
+        _length = ParseLength(time);
+        _comments = comments ?? new List<Comment>();
     }
 
-    public string _getLength(string time)
+    public string GetVideo()
+    {
+        return $"{_title},{_author},{_length}";
+    }
+
+    public int GetCommentCount()
+    {
+        return _comments.Count;
+    }
+
+    public IReadOnlyList<Comment> GetComments()
+    {
+        return _comments.AsReadOnly();
+    }
+
+    private int ParseLength(string time)
     {
         string[] timeParts = time.Split(':');
 
@@ -23,23 +40,19 @@ public class Video
             int hours = int.Parse(timeParts[0]);
             int minutes = int.Parse(timeParts[1]);
             int seconds = int.Parse(timeParts[2]);
-            int totalSeconds = hours * 3600 + minutes * 60 + seconds;
-            return totalSeconds.ToString();
+            return hours * 3600 + minutes * 60 + seconds;
         }
         else if (timeParts.Length == 2)
         {
             int minutes = int.Parse(timeParts[0]);
             int seconds = int.Parse(timeParts[1]);
-            int totalSeconds = minutes * 60 + seconds;
-            return totalSeconds.ToString();
+            return minutes * 60 + seconds;
         }
         else if (timeParts.Length == 1)
         {
-            int seconds = int.Parse(timeParts[0]);
-            return seconds.ToString();
+            return int.Parse(timeParts[0]);
         }
 
-        return "0";
+        return 0;
     }
-
 }

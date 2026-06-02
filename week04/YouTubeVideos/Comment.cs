@@ -2,19 +2,18 @@
 
 public class Comment
 {
-    private string _Name;
-    private string _Text;
-    int count = 0;
+    private string _name;
+    private string _text;
 
-    public string _GetComment(string commented)
+    public Comment(string commented)
     {
-        string[] Parts = commented.Split(':');
-        count ++;
-        _Name = Parts[0];
-        _Text = Parts[1];
-
-        return $"User {_Name} : said \"{_Text}\"";
+        string[] parts = commented.Split(':', 2);
+        _name = parts[0].Trim();
+        _text = parts.Length > 1 ? parts[1].Trim() : string.Empty;
     }
-    
 
+    public override string ToString()
+    {
+        return $"User {_name} : said \"{_text}\"";
+    }
 }
